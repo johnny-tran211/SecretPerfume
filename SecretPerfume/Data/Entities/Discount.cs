@@ -31,11 +31,19 @@ namespace SecretPerfume.Data.Entities
         [Required]
         public int Amount { get; set; }
 
+        [Column(TypeName = "ntext")]
+        [Required]
+        public string DiscountForm { get; set; }
+
         // Foreign Key
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         [Required]
         public string Discount_Type_Id { get; set; }
-        public virtual DiscountType DiscountType { get; set; }
+        public DiscountType DiscountType { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

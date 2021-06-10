@@ -24,5 +24,7 @@ namespace SecretPerfume.Data.Entities
         [StringLength(50)]
         [Required]
         public string Category_Id { get; set; }
+        public Category Category { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

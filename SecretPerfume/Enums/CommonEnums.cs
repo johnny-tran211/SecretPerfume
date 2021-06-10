@@ -15,6 +15,7 @@ namespace SecretPerfume.Enums
         }
         public enum OrderStatus
         {
+
         }
     }
 }

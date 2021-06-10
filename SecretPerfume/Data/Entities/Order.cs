@@ -47,12 +47,19 @@ namespace SecretPerfume.Data.Entities
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         [Required]
-        public string Customer_Id { get; set; }
+        public string User_Id { get; set; }
+        public User User { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        public string Discount_Id { get; set; }
+        public Discount Discount { get; set; }
+
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         [Required]
-        public string Discount_Id { get; set; }
+        public string Status_Id { get; set; }
+        public Status Status { get; set; }
 
-        public virtual List<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

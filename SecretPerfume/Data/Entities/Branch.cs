@@ -26,6 +26,13 @@ namespace SecretPerfume.Data.Entities
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        public virtual List<Product> Products { get; set; }
+        // Foreign Key
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(50)]
+        [Required]
+        public string Status_Id { get; set; }
+        public Status Status { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

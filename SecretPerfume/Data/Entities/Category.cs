@@ -19,6 +19,6 @@ namespace SecretPerfume.Data.Entities
         [Required]
         public string Name { get; set; }
 
-        public virtual List<SubCategory> SubCategories { get; set; }
+        public virtual ICollection<SubCategory> SubCategories { get; set; }
     }
 }

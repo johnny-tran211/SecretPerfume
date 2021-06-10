@@ -32,14 +32,17 @@ namespace SecretPerfume.Data.Entities
         [StringLength(50)]
         [Required]
         public string Order_Id { get; set; }
+        public Order Order { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         [Required]
         public string Product_Id { get; set; }
+        public Product Product { get; set; }
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         public string Discount_Id { get; set; }
+        public Discount Discount { get; set; }
     }
 }
