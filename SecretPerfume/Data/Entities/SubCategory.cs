@@ -20,7 +20,7 @@ namespace SecretPerfume.Data.Entities
         public string Name { get; set; }
 
         // Foreign Key
-        [Column(TypeName = "NVARCHAR")]
+        [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         [Required]
         public string Category_Id { get; set; }

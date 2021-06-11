@@ -10,7 +10,7 @@ using SecretPerfume.Data;
 namespace SecretPerfume.Migrations
 {
     [DbContext(typeof(SecrectPerfumeDbContext))]
-    [Migration("20210610194525_Initial")]
+    [Migration("20210611103012_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -271,7 +271,6 @@ namespace SecretPerfume.Migrations
                         .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("User_Id")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("VARCHAR(50)");
 
@@ -396,7 +395,6 @@ namespace SecretPerfume.Migrations
                         .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("Thumbnail")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("VARCHAR(50)");
 
@@ -468,7 +466,7 @@ namespace SecretPerfume.Migrations
                     b.Property<string>("Category_Id")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("NVARCHAR(50)");
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -621,8 +619,7 @@ namespace SecretPerfume.Migrations
                     b.HasOne("SecretPerfume.Data.Entities.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("User_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Discount");
 
@@ -729,7 +726,7 @@ namespace SecretPerfume.Migrations
                     b.HasOne("SecretPerfume.Data.Entities.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("Role_Id")
-                        .OnDelete(DeleteBehavior.SetNull)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Role");

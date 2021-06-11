@@ -50,10 +50,10 @@ namespace SecretPerfume.Data.Entities
         public string Status_Id { get; set; }
         public Status Status { get; set; }
 
-        public virtual List<ProductImage> ProductImages { get; set; }
-        public virtual List<Rating> Ratings { get; set; }
-        public virtual List<Comment> Comments { get; set; }
-        public virtual List<OrderDetail> OrderDetails { get; set; }
-        public virtual List<SubCategory> SubCategories { get; set; }
+        public virtual ICollection<ProductImage> ProductImages { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<SubCategory> SubCategories { get; set; }
     }
 }

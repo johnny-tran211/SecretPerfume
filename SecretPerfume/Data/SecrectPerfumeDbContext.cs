@@ -77,7 +77,7 @@ namespace SecretPerfume.Data
             modelBuilder.Entity<Role>().HasMany<User>(r => r.Users)
                 .WithOne(u => u.Role)
                 .HasForeignKey(p => p.Role_Id)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Restrict);
             
             // Status
             modelBuilder.Entity<Status>().HasMany<Feedback>(s => s.Feedbacks)

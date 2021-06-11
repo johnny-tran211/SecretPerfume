@@ -61,7 +61,7 @@ namespace SecretPerfume.Migrations
                 {
                     Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Name = table.Column<string>(type: "NVARCHAR(50)", maxLength: 50, nullable: false),
-                    Category_Id = table.Column<string>(type: "NVARCHAR(50)", maxLength: 50, nullable: false)
+                    Category_Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -122,7 +122,7 @@ namespace SecretPerfume.Migrations
                         column: x => x.Role_Id,
                         principalTable: "Roles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.SetNull);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -184,7 +184,7 @@ namespace SecretPerfume.Migrations
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     OrderStatus = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    User_Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    User_Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: true),
                     Discount_Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: true),
                     Status_Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false)
                 },
@@ -318,7 +318,7 @@ namespace SecretPerfume.Migrations
                 {
                     Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Image = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    Thumbnail = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Thumbnail = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: true),
                     Product_Id = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>

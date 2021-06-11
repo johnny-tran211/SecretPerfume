@@ -46,7 +46,6 @@ namespace SecretPerfume.Data.Entities
         // Foreign Key
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
-        [Required]
         public string User_Id { get; set; }
         public User User { get; set; }
         [Column(TypeName = "VARCHAR")]

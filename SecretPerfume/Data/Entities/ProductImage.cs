@@ -21,7 +21,6 @@ namespace SecretPerfume.Data.Entities
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
-        [Required]
         public string Thumbnail { get; set; }
 
         // Foreign Key
@@ -29,6 +28,6 @@ namespace SecretPerfume.Data.Entities
         [StringLength(50)]
         [Required]
         public string Product_Id { get; set; }
-        public Product Product { get; set; }
+        public Product Product { get; set;}
     }
 }
