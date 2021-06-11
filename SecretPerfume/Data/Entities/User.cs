@@ -17,7 +17,10 @@ namespace SecretPerfume.Data.Entities
 
         [Column(TypeName = "VARCHAR")]
         [StringLength(100)]
-        [Required]
+        public string Username { get; set; }
+
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(100)]
         public string Email { get; set; }
 
         [Column(TypeName = "VARCHAR")]
@@ -53,9 +56,10 @@ namespace SecretPerfume.Data.Entities
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         public string Role_Id { get; set; }
+        public Role Role { get; set; }
 
-        public virtual List<Order> Orders { get; set; }
-        public virtual List<Comment> Comments { get; set; }
-        public virtual List<Rating> Ratings { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
     }
 }

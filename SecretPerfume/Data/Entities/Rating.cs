@@ -17,9 +17,11 @@ namespace SecretPerfume.Data.Entities
         [StringLength(50)]
         [Required]
         public string User_Id { get; set; }
+        public User User { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(50)]
         [Required]
         public string Product_Id { get; set; }
+        public Product Product { get; set; }
     }
 }

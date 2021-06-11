@@ -19,10 +19,6 @@ namespace SecretPerfume.Data.Entities
         [Required]
         public string Name { get; set; }
 
-        [Column(TypeName = "ntext")]
-        [Required]
-        public string Discount_Form { get; set; }
-
-        public virtual Discount Discount { get; set; }
+        public virtual ICollection<Discount> Discounts { get; set; }
     }
 }
